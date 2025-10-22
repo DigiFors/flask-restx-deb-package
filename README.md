@@ -44,9 +44,9 @@ exit
 
 ```shell
 cd ..
-./build_for_ultimaker.sh
+./build_deb_package.sh
 ```
-If the last command fails, maybe depenedencies are missing. You'll find a list of required dependencies as comment in file build_for_ultimaker.sh.
+
 
 ### Install DEB package
 
