@@ -11,14 +11,14 @@ This repository is a fork of the [package builder repo for flask-restplus](https
 
 ### Checkout this repo.
 ```shell
-git clone git@github.com:Entwicklungsleiter/flask-restx-deb-package.git # maybe You'll like to replace with https-URL
+git clone git@github.com:DigiFors/flask-restx-deb-package.git # maybe You'll like to replace with https-URL
 cd flask-restx-deb-package/
 ```
 
 ### Setup / Preparing:
 ```shell
 # install debian / Ubuntu dependencies
-sudo apt install dh-python python3-stdeb python3-aniso8601 python3-pip
+sudo apt install python3-pip
 
 # initiate flask-restx as git submodule
 git submodule init
@@ -36,14 +36,15 @@ pip install -e .[dev]
 # download and install all assets (i.e. Swagger files)
 inv assets
 
-# leave virtual pip environment
-exit
+# install dependencies for building deb package
+cd ..
+pip install -e .[dev]
 ```
 
-### Run deb build process in Your shell:
+### Run deb build process:
+in the still activated virtual environment run:
 
 ```shell
-cd ..
 ./build_deb_package.sh
 ```
 
